@@ -3,7 +3,7 @@ import java.io.File
 fun main() {
     println("Welcome to the advent of code!\n\n")
     //get input
-    val input = readFileAsLinesUsingUseLines("C:\\DevStuff\\advent-of-code-2020\\src\\input.txt")
+    val input = readFileAsLinesUsingUseLines("src/input.txt")
 
     //print ("Day 1 result: " + day01(input))
     //print ("Day 2 result: " + day02b(input))
