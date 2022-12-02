@@ -1,48 +1,48 @@
-fun day02(input: List<String>): Int {
-    var numberOfSuccess = 0
-    for (i in input) {
-        val args = i.split(" ")
-        val minMax = args[0].split("-")
-        val min = minMax[0].toInt()
-        val max = minMax[1].toInt()
-        val key = args[1][0]
-        val password = args[2]
 
-        val count = countOccurrences(password, key)
-
-        if (count >= min && count <= max) {
-            numberOfSuccess++
-        }
-    }
-    return numberOfSuccess
+fun main(){
+    day02AssignmentA()
+    day02AssignmentB()
 }
 
-fun countOccurrences(s: String, ch: Char): Int {
-    return s.filter { it == ch }.count()
+fun day02AssignmentA() {
+    // X = 1, Y = 2, Z = 3, loss 0, draw 3, win 6
+    val pairs = mapOf(
+        "A X" to 4, 
+        "A Y" to 8,
+        "A Z" to 3,
+        "B X" to 1,
+        "B Y" to 5,
+        "B Z" to 9,
+        "C X" to 7,
+        "C Y" to 2,
+        "C Z" to 6)
+    val input = readFile("src/input/day02.txt")
+    var sum = 0
+    for(line in input) {
+        sum += pairs[line]!!
+    }
+
+    println("------------- day 2: b --------------")
+    println("Highest calorie count: $sum")
 }
 
-fun day02b(input: List<String>): Int {
-    var numberOfSuccess = 0
-    for (i in input) {
-        val args = i.split(" ")
-        val minMax = args[0].split("-")
-        val min = minMax[0].toInt()
-        val max = minMax[1].toInt()
-        val key = args[1][0]
-        val password = args[2]
-
-        if (countIndexedOccurrences(password, key, min - 1, max - 1)) {
-            numberOfSuccess++
-        }
+fun day02AssignmentB() {
+    // X = 0, Y = 3, Z = 6
+    val pairs = mapOf(
+        "A X" to 3,
+        "A Y" to 4,
+        "A Z" to 8,
+        "B X" to 1,
+        "B Y" to 5,
+        "B Z" to 9,
+        "C X" to 2,
+        "C Y" to 6,
+        "C Z" to 7)
+    val input = readFile("src/input/day02.txt")
+    var sum = 0
+    for(line in input) {
+        sum += pairs[line]!!
     }
-    return numberOfSuccess
-}
-
-fun countIndexedOccurrences(s: String, ch: Char, pos1: Int, pos2: Int): Boolean {
-    val positionOneMatch = s[pos1].equals(ch)
-    var positionTwoMatch = false
-    if (pos2 <= s.length) {
-        positionTwoMatch = s[pos2].equals(ch)
-    }
-    return (positionOneMatch.xor(positionTwoMatch))
+    println("------------- day 2: a --------------")
+    println("Highest calorie count: $sum")
 }
