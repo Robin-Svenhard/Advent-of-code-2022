@@ -17,7 +17,7 @@ fun day03AssignmentA() {
         println("charToInt: " + charToInt(match))
     }
     
-    println("------------- day 2: a --------------")
+    println("------------- day 3: a --------------")
     println("Sum of priorities: $sum")
 }
 
