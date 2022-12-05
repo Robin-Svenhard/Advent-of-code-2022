@@ -22,7 +22,7 @@ fun day02AssignmentA() {
         sum += pairs[line]!!
     }
 
-    println("------------- day 2: b --------------")
+    println("------------- day 2: a --------------")
     println("Highest calorie count: $sum")
 }
 
@@ -43,6 +43,6 @@ fun day02AssignmentB() {
     for(line in input) {
         sum += pairs[line]!!
     }
-    println("------------- day 2: a --------------")
+    println("------------- day 2: b --------------")
     println("Highest calorie count: $sum")
 }
